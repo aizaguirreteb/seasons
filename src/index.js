@@ -17,13 +17,16 @@ import ReactDOM from 'react-dom';
 
 class App extends React.Component {
 
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-        //This is our state object!
-        this.state = { lat: null, errorMessage: '' }
+    //     //This is our state object!
+    //     this.state = { lat: null, errorMessage: '' }
         
-    }
+    // }
+
+    // Different way of initializing component state
+    state = { lat: null, errorMessage: '' }
 
     componentDidMount() {
         console.log('My component was rendered to the screen')

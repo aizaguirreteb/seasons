@@ -22,19 +22,15 @@ class App extends React.Component {
 
         //This is our state object!
         this.state = { lat: null, errorMessage: '' }
-
-        window.navigator.geolocation.getCurrentPosition(
-            position => {
-                this.setState({ lat: position.coords.latitude })
-            },
-            err => {
-                this.setState({ errorMessage: err.message })
-            }
-        )
+        
     }
 
     componentDidMount() {
         console.log('My component was rendered to the screen')
+        window.navigator.geolocation.getCurrentPosition(
+            position => this.setState({ lat: position.coords.latitude }),
+            err => this.setState({ errorMessage: err.message })            
+        )
     }
 
     componentDidUpdate() {
